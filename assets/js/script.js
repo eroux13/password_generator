@@ -27,12 +27,13 @@ function generatePassword() {
     if (!pwlength) {
         alert("Length cannot be blank!");
         generatePassword();
+    } else if (pwlength) {
         while (pwlength < 8 || pwlength > 128) {
             pwlength = prompt("Password length must be between 8 and 128 characters. Please enter a new length");
             // Ask for criteria
             var confirmUpper = confirm("Will there be Uppercase charaters?");
             var confirmLower = confirm("Will there be Lowercase characters?");
-            var confirmNum = confirm("will there be Numbers?");
+            var confirmNum = confirm("Will there be Numbers?");
             var confirmSpecial = confirm("Will there be Special Characters?");
             if (confirmUpper === false && confirmLower === false && confirmNum === false && confirmSpecial === false) {
                 alert("At least one criteria needs to be selected!");
