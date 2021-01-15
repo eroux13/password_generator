@@ -17,6 +17,9 @@ var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "
 // User choices
 var choices;
 
+// Empty array to push characters in
+var finalPassword = [];
+
 // Write password to the #password input
 function writePassword() {
     var password = generatePassword();
@@ -39,7 +42,7 @@ function generatePassword() {
         var confirmLower = confirm("Will there be Lowercase characters?");
         var confirmNum = confirm("Will there be Numbers?");
         var confirmSpecial = confirm("Will there be Special Characters?");
-        // Use Case for no inputs
+        // Use case for no inputs
         if (confirmUpper === false && confirmLower === false && confirmNum === false && confirmSpecial === false) {
             alert("At least one criteria needs to be selected!");
             generatePassword();
@@ -93,10 +96,16 @@ function generatePassword() {
         else if (confirmSpecial) {
             choices = specialChar;
         }
-
+        // Select characters based off of user input length
+        for (var i = 0; i < pwlength; i++) {
+            var confirmChoices = choices[Math.floor(Math.random() * choices.length)];
+            finalPassword.push(confirmChoices);
+        }
+        // Use join() to concatenate characters
+        var displayPassword = finalPassword.join("");
+        return displayPassword;
     }
 }
-
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
