@@ -15,7 +15,7 @@ When the Generate Password button is clicked, the user is prompted to enter a pa
 
 ![Character Length Prompt Screenshot](./assets/images/enterLength.png)
 
-Once the length is entered, the user will be prompted to select criteria to determine whether of not the generated password will have certain characters.
+Once the length is entered, the user will be prompted to select criteria to determine whether or not the generated password will have certain characters.
 
 ![Upper Case Character Confirm Screenshot](./assets/images/upperCase.png)
 ![Lower Case Character Confirm Screenshot](./assets/images/lowerCase.png)
