@@ -34,7 +34,7 @@ function generatePassword() {
         alert("Length cannot be blank!");
         generatePassword();
     } else if (pwlength < 8 || pwlength > 128) {
-        pwlength = prompt("Password length must be between 8 and 128 characters. Please enter a new length");
+        pwlength = alert("Password length must be between 8 and 128 characters. Please enter a new length");
         generatePassword();
     } else if (pwlength >= 8 && pwlength <= 128) {
         // Ask for criteria
