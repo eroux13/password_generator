@@ -32,10 +32,10 @@ function generatePassword() {
     var pwlength = parseInt(prompt("Please enter password length. Must be between 8 - 128 characters"));
     if (!pwlength) {
         alert("Length cannot be blank!");
-        generatePassword();
+        return generatePassword();
     } else if (pwlength < 8 || pwlength > 128) {
         pwlength = alert("Password length must be between 8 and 128 characters. Please enter a new length");
-        generatePassword();
+        return generatePassword();
     } else if (pwlength >= 8 && pwlength <= 128) {
         // Ask for criteria
         var confirmUpper = confirm("Will there be Uppercase charaters?");
@@ -45,7 +45,7 @@ function generatePassword() {
         // Use case for no inputs
         if (confirmUpper === false && confirmLower === false && confirmNum === false && confirmSpecial === false) {
             alert("At least one criteria needs to be selected!");
-            generatePassword();
+            return generatePassword();
         }
         // Use case for all criteria
         else if (confirmUpper && confirmLower && confirmNum && confirmSpecial) {
